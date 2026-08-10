@@ -1,0 +1,24 @@
+:root {
+  color-scheme: light;
+
+  /* Friendster 2008-inspired palette */
+  --color-page-background: #efeee8;
+  --color-surface: #ffffff;
+  --color-text: #4f5559;
+  --color-text-muted: #747b80;
+  --color-border: #c8c8c2;
+
+  --color-brand: #277fa8;
+  --color-brand-dark: #176d9c;
+  --color-brand-light: #e4f1f8;
+  --color-brand-border: #9fc2d4;
+
+  --color-accent-orange: #dc6a36;
+  --color-accent-yellow: #e9be3f;
+  --color-accent-yellow-light: #ffe36f;
+  --color-wordmark: #9a9c9e;
+
+  /* Original pages primarily used Arial; the wordmark gets a rounder fallback. */
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-wordmark: 'Trebuchet MS', Arial, sans-serif;
+}
