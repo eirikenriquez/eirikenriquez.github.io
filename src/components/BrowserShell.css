@@ -1,0 +1,125 @@
+.browser-shell {
+  width: min(100%, 70rem);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #a7aaad;
+  border-radius: 0.625rem;
+  background: #dededb;
+  box-shadow: 0 1.125rem 2.75rem rgb(25 40 55 / 18%);
+}
+
+.browser-shell__tab-bar {
+  display: flex;
+  align-items: end;
+  gap: 0.625rem;
+  padding: 0.5rem 0.625rem 0;
+  background: #c9c9c6;
+}
+
+.browser-shell__window-controls {
+  display: flex;
+  gap: 0.375rem;
+  padding-bottom: 0.5625rem;
+}
+
+.browser-shell__window-controls span {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+}
+
+.browser-shell__window-controls span:nth-child(1) {
+  background: #ec6b4f;
+}
+
+.browser-shell__window-controls span:nth-child(2) {
+  background: #efbd48;
+}
+
+.browser-shell__window-controls span:nth-child(3) {
+  background: #78ad67;
+}
+
+.browser-shell__tab {
+  width: min(16.25rem, 55%);
+  padding: 0.5rem 0.75rem;
+  overflow: hidden;
+  border: 1px solid #aaaaaa;
+  border-bottom: 0;
+  border-radius: 0.4375rem 0.4375rem 0 0;
+  background: #f4f4f2;
+  color: var(--color-text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.browser-shell__toolbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0.625rem;
+  border-bottom: 1px solid #aaaaaa;
+  background: #f4f4f2;
+}
+
+.browser-shell__navigation {
+  display: flex;
+  gap: 0.25rem;
+  color: #696d70;
+}
+
+.browser-shell__navigation span {
+  display: grid;
+  width: 1.625rem;
+  height: 1.625rem;
+  place-items: center;
+}
+
+.browser-shell__address {
+  display: flex;
+  gap: 0.4375rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.375rem 0.625rem;
+  border: 1px solid #b5b7b9;
+  border-radius: 999px;
+  background: var(--color-surface);
+}
+
+.browser-shell__address span:first-child {
+  color: #78ad67;
+}
+
+.browser-shell__address span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.browser-shell__visitor {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.browser-shell__viewport {
+  min-height: 28rem;
+  background: var(--color-surface);
+}
+
+@media (max-width: 36rem) {
+  .browser-shell__visitor,
+  .browser-shell__navigation span:nth-child(2) {
+    display: none;
+  }
+
+  .browser-shell__toolbar {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .browser-shell__tab {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+  }
+}
