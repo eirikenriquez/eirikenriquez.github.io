@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
-import './BrowserShell.css';
+import type { ReactNode } from "react";
+import "./BrowserShell.css";
 
 type BrowserShellProps = {
   children?: ReactNode;
