@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import FriendsterPanel from './components/FriendsterPanel';
-import FriendsterHeader from './components/FriendsterHeader';
 import ProfileIntro from './components/ProfileIntro';
 import ProfileLayout from './components/ProfileLayout';
+import SiteHeader from './components/SiteHeader';
 import XPLoginScreen from './components/XPLoginScreen';
 import './App.css';
 
@@ -45,7 +45,7 @@ function App() {
   return (
     <main id="top" className="app app--entering">
       <div className="portfolio-page">
-        <FriendsterHeader />
+        <SiteHeader />
         <ProfileIntro />
         <ProfileLayout
           sidebar={<FriendsterPanel title="Eirik's details" />}
