@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import BrowserShell from './components/BrowserShell';
 import FriendsterPanel from './components/FriendsterPanel';
 import FriendsterHeader from './components/FriendsterHeader';
 import ProfileIntro from './components/ProfileIntro';
@@ -45,7 +44,7 @@ function App() {
 
   return (
     <main id="top" className="app app--entering">
-      <BrowserShell>
+      <div className="portfolio-page">
         <FriendsterHeader />
         <ProfileIntro />
         <ProfileLayout
@@ -53,7 +52,7 @@ function App() {
         >
           <FriendsterPanel id="projects" title="Eirik's featured projects" />
         </ProfileLayout>
-      </BrowserShell>
+      </div>
     </main>
   );
 }
