@@ -1,6 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
 import type { Project } from '../data/projects';
-import wordmark from '../assets/the-word-per-minute-wordmark.svg';
 import './ProjectCard.css';
 
 type ProjectCardProps = {
@@ -8,15 +7,21 @@ type ProjectCardProps = {
 };
 
 function ProjectCard({ project }: ProjectCardProps) {
+  const cardClassName = project.featured
+    ? 'project-card project-card--featured'
+    : 'project-card';
+
   return (
-    <article className="project-card">
-      <div className="project-card__visual">
-        <img src={wordmark} alt="" />
-      </div>
+    <article className={cardClassName}>
+      {project.image && (
+        <div className="project-card__visual">
+          <img src={project.image.src} alt={project.image.alt} />
+        </div>
+      )}
 
       <div className="project-card__content">
         <div className="project-card__heading">
-          <p>Featured project</p>
+          <p>{project.featured ? 'Featured project' : 'Project'}</p>
           {project.status && <span>{project.status}</span>}
         </div>
 
