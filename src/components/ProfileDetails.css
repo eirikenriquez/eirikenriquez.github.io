@@ -1,0 +1,133 @@
+.profile-details {
+  position: sticky;
+  top: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 1rem;
+  background: var(--color-surface);
+  box-shadow: 0 0.75rem 2rem rgb(31 46 55 / 7%);
+}
+
+.profile-details__header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-brand-border);
+  background: var(--color-brand-light);
+}
+
+.profile-details__header p,
+.profile-details__header h2 {
+  margin: 0;
+}
+
+.profile-details__header p {
+  color: var(--color-brand-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-details__header h2 {
+  margin-top: 0.2rem;
+  color: var(--color-text-strong);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.profile-details__facts {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+.profile-details__facts div {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.profile-details__facts dt {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.profile-details__facts dt svg {
+  color: var(--color-brand);
+}
+
+.profile-details__facts dd {
+  margin: 0 0 0 1.5rem;
+  color: var(--color-text-strong);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.profile-details__section {
+  padding: 1rem;
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.profile-details__section h3 {
+  margin: 0 0 0.75rem;
+  color: var(--color-text-strong);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.profile-details__interests,
+.profile-details__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-details__interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.profile-details__interests li {
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.4rem;
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+  font-size: 0.75rem;
+}
+
+.profile-details__links {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.profile-details__links a {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.45rem;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.profile-details__links a:hover {
+  background: var(--color-brand-light);
+  color: var(--color-brand-dark);
+}
+
+.profile-details__links a:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+@media (max-width: 40rem) {
+  .profile-details {
+    position: static;
+  }
+}

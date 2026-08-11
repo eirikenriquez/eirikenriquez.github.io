@@ -44,27 +44,43 @@
 
 .site-header__navigation {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.25rem;
   align-items: center;
 }
 
-.site-header__navigation a {
+.site-header__navigation a,
+.site-header__navigation button {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
   padding: 0.5rem 0.7rem;
+  border: 0;
   border-radius: 0.5rem;
+  background: transparent;
   color: var(--color-text);
+  cursor: pointer;
   font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
 }
 
-.site-header__navigation a:hover {
+.site-header__navigation a:hover,
+.site-header__navigation button:hover {
   background: var(--color-brand-light);
   color: var(--color-brand-dark);
 }
 
-.site-header__navigation a:focus-visible {
+.site-header__navigation a:focus-visible,
+.site-header__navigation button:focus-visible {
   outline: 2px solid var(--color-brand);
   outline-offset: 2px;
+}
+
+.site-header__navigation button {
+  margin-left: 0.25rem;
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-surface-muted);
 }
 
 @media (max-width: 38rem) {

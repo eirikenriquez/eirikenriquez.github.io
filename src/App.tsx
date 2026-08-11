@@ -1,17 +1,25 @@
 import { useEffect, useState } from 'react';
-import FriendsterPanel from './components/FriendsterPanel';
+import ProfileDetails from './components/ProfileDetails';
 import ProfileIntro from './components/ProfileIntro';
 import ProfileLayout from './components/ProfileLayout';
+import ProjectsSection from './components/ProjectsSection';
 import SiteHeader from './components/SiteHeader';
 import XPLoginScreen from './components/XPLoginScreen';
 import './App.css';
 
 type ExperienceStage = 'login' | 'opening' | 'profile';
 
+const introSessionKey = 'eirikster-intro-viewed';
 const profileTransitionDuration = 700;
 
+function getInitialStage(): ExperienceStage {
+  const hasViewedIntro = window.sessionStorage.getItem(introSessionKey) === 'true';
+
+  return hasViewedIntro ? 'profile' : 'login';
+}
+
 function App() {
-  const [stage, setStage] = useState<ExperienceStage>('login');
+  const [stage, setStage] = useState<ExperienceStage>(getInitialStage);
 
   useEffect(() => {
     if (stage !== 'opening') {
@@ -30,7 +38,14 @@ function App() {
       '(prefers-reduced-motion: reduce)',
     ).matches;
 
+    window.sessionStorage.setItem(introSessionKey, 'true');
     setStage(prefersReducedMotion ? 'profile' : 'opening');
+  }
+
+  function handleReplayIntro() {
+    window.sessionStorage.removeItem(introSessionKey);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    setStage('login');
   }
 
   if (stage !== 'profile') {
@@ -45,12 +60,10 @@ function App() {
   return (
     <main id="top" className="app app--entering">
       <div className="portfolio-page">
-        <SiteHeader />
+        <SiteHeader onReplayIntro={handleReplayIntro} />
         <ProfileIntro />
-        <ProfileLayout
-          sidebar={<FriendsterPanel title="Eirik's details" />}
-        >
-          <FriendsterPanel id="projects" title="Eirik's featured projects" />
+        <ProfileLayout sidebar={<ProfileDetails />}>
+          <ProjectsSection />
         </ProfileLayout>
       </div>
     </main>

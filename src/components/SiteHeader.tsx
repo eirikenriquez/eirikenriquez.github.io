@@ -1,6 +1,11 @@
+import { RotateCcw } from 'lucide-react';
 import './SiteHeader.css';
 
-function SiteHeader() {
+type SiteHeaderProps = {
+  onReplayIntro: () => void;
+};
+
+function SiteHeader({ onReplayIntro }: SiteHeaderProps) {
   return (
     <header className="site-header">
       <a
@@ -19,6 +24,10 @@ function SiteHeader() {
       <nav className="site-header__navigation" aria-label="Main navigation">
         <a href="#profile">Profile</a>
         <a href="#projects">Projects</a>
+        <button type="button" onClick={onReplayIntro}>
+          <RotateCcw aria-hidden="true" size={15} />
+          Replay intro
+        </button>
       </nav>
     </header>
   );
