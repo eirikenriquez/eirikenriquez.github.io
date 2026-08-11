@@ -1,7 +1,7 @@
 import {
-  Github,
+  Code2,
+  Contact,
   GraduationCap,
-  Linkedin,
   Mail,
   MapPin,
 } from 'lucide-react';
@@ -49,13 +49,13 @@ function ProfileDetails() {
         <ul className="profile-details__links">
           <li>
             <a href="https://github.com/eirikenriquez">
-              <Github aria-hidden="true" size={17} />
+              <Code2 aria-hidden="true" size={17} />
               GitHub
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/eirik-mykel-navarro-enriquez/">
-              <Linkedin aria-hidden="true" size={17} />
+              <Contact aria-hidden="true" size={17} />
               LinkedIn
             </a>
           </li>
