@@ -20,6 +20,9 @@ body {
     var(--color-page-background);
   color: var(--color-text);
   font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 button,
