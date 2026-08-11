@@ -2,17 +2,26 @@ import type { FormEvent } from 'react';
 import './XPLoginScreen.css';
 
 type XPLoginScreenProps = {
+  isOpening: boolean;
   onViewProfile: () => void;
 };
 
-function XPLoginScreen({ onViewProfile }: XPLoginScreenProps) {
+function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (isOpening) {
+      return;
+    }
+
     onViewProfile();
   }
 
   return (
-    <main className="xp-login-screen">
+    <main
+      className={`xp-login-screen${isOpening ? ' xp-login-screen--opening' : ''}`}
+      aria-busy={isOpening}
+    >
       <section className="xp-window" aria-labelledby="xp-window-title">
         <header className="xp-window__title-bar">
           <div className="xp-window__title">
@@ -74,11 +83,23 @@ function XPLoginScreen({ onViewProfile }: XPLoginScreenProps) {
               <span>Remember me on this computer</span>
             </label>
 
-            <button className="xp-login__button" type="submit">
-              View Eirik&apos;s profile
+            <button
+              className="xp-login__button"
+              type="submit"
+              disabled={isOpening}
+            >
+              {isOpening ? 'Opening profile...' : "View Eirik's profile"}
             </button>
 
-            <p className="xp-login__note">No account or real password needed.</p>
+            <div className="xp-login__progress" aria-hidden="true">
+              <span />
+            </div>
+
+            <p className="xp-login__note" role="status" aria-live="polite">
+              {isOpening
+                ? 'Loading Eirikster profile'
+                : 'No account or real password needed.'}
+            </p>
           </form>
         </div>
 

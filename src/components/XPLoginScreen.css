@@ -1,6 +1,8 @@
 .xp-login-screen {
+  position: relative;
   display: grid;
   min-height: 100vh;
+  overflow: hidden;
   padding: clamp(1rem, 5vw, 4rem);
   place-items: center;
   background:
@@ -11,7 +13,19 @@
   font-family: var(--font-retro);
 }
 
+.xp-login-screen::after {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  background: var(--color-page-background);
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+}
+
 .xp-window {
+  position: relative;
+  z-index: 1;
   width: min(100%, 46rem);
   overflow: hidden;
   border: 2px solid var(--color-xp-border);
@@ -271,6 +285,51 @@
   transform: translateY(1px);
 }
 
+.xp-login__button:disabled {
+  cursor: wait;
+  filter: saturate(0.7);
+}
+
+.xp-login__progress {
+  height: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #7f9db9;
+  background: #ffffff;
+  box-shadow: inset 1px 1px 2px rgb(0 0 0 / 15%);
+  opacity: 0;
+}
+
+.xp-login__progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #58a332 0 0.65rem,
+    #8ed465 0.65rem 0.8rem
+  );
+}
+
+.xp-login-screen--opening {
+  pointer-events: none;
+}
+
+.xp-login-screen--opening::after {
+  animation: xp-backdrop-exit 700ms ease-in forwards;
+}
+
+.xp-login-screen--opening .xp-window {
+  animation: xp-window-exit 700ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.xp-login-screen--opening .xp-login__progress {
+  opacity: 1;
+}
+
+.xp-login-screen--opening .xp-login__progress span {
+  animation: xp-progress 620ms ease-out forwards;
+}
+
 .xp-login__note {
   color: #6a6a6a;
   font-size: 0.68rem;
@@ -293,6 +352,44 @@
   border-radius: 50%;
   background: #6db33f;
   box-shadow: inset 1px 1px rgb(255 255 255 / 55%);
+}
+
+@keyframes xp-progress {
+  from {
+    width: 8%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes xp-window-exit {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translateY(-0.5rem) scale(1.025);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-1rem) scale(1.12);
+  }
+}
+
+@keyframes xp-backdrop-exit {
+  0%,
+  55% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 38rem) {
@@ -320,5 +417,13 @@
 
   .xp-login__profile-preview {
     align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xp-login-screen--opening::after,
+  .xp-login-screen--opening .xp-window,
+  .xp-login-screen--opening .xp-login__progress span {
+    animation: none;
   }
 }
