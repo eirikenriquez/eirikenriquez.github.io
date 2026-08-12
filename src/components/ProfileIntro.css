@@ -1,92 +1,41 @@
 .profile-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(13rem, 17rem);
-  gap: clamp(3rem, 9vw, 7rem);
+  display: flex;
+  gap: 2rem;
   align-items: end;
-  min-height: clamp(24rem, 58vh, 34rem);
-  padding: clamp(4rem, 9vw, 7rem) clamp(1rem, 6vw, 5rem) clamp(3rem, 7vw, 5rem);
-  border-bottom: 1px solid var(--color-border);
+  justify-content: space-between;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2rem) 1.25rem;
   background: var(--color-surface);
 }
 
-.profile-intro__summary,
-.profile-intro__current p {
-  margin: 0;
-}
-
-.profile-intro h1 {
+.profile-intro p {
+  max-width: 26rem;
   margin: 0;
   color: var(--color-text-strong);
-  font-size: clamp(3.25rem, 8vw, 6.5rem);
-  font-weight: 500;
-  letter-spacing: -0.065em;
-  line-height: 0.96;
-  text-transform: uppercase;
-}
-
-.profile-intro__summary {
-  margin-top: 1.25rem;
-  color: var(--color-text-muted);
-  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  letter-spacing: -0.035em;
+  line-height: 1.35;
 }
 
 .profile-intro__work-link {
   display: inline-flex;
+  flex: none;
   gap: 0.45rem;
   align-items: center;
-  margin-top: 2rem;
   color: var(--color-brand-dark);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-underline-offset: 0.25rem;
 }
 
-.profile-intro__current {
-  padding-left: 1.25rem;
-  border-left: 0.2rem solid var(--color-accent-orange);
-}
-
-.profile-intro__current span {
-  display: block;
-  margin-bottom: 0.6rem;
-  color: var(--color-text-muted);
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.profile-intro__current strong {
-  color: var(--color-text-strong);
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.profile-intro__current p {
-  margin-top: 0.35rem;
-  color: var(--color-text-muted);
-  font-size: 0.75rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 46rem) {
+@media (max-width: 32rem) {
   .profile-intro {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    min-height: auto;
-    padding-top: clamp(4rem, 14vw, 5rem);
+    align-items: start;
+    padding-top: 2.5rem;
   }
 
-  .profile-intro__current {
-    max-width: 20rem;
-    padding: 1rem 0 0;
-    border-top: 1px solid var(--color-border-soft);
-    border-left: 0;
-  }
-}
-
-@media (max-width: 28rem) {
-  .profile-intro h1 {
-    font-size: clamp(3rem, 15vw, 4.25rem);
+  .profile-intro p {
+    max-width: 17rem;
   }
 }

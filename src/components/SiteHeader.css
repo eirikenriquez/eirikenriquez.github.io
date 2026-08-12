@@ -11,12 +11,18 @@
 .site-header__wordmark {
   position: absolute;
   left: 50%;
-  color: var(--color-text-strong);
-  font-size: 1rem;
+  margin: 0;
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
   font-weight: 500;
-  letter-spacing: -0.025em;
-  text-decoration: none;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-transform: uppercase;
   transform: translateX(-50%);
+}
+
+.site-header__wordmark a {
+  color: var(--color-text-strong);
+  text-decoration: none;
 }
 
 .site-header__navigation {
@@ -39,7 +45,7 @@
 }
 
 .site-header__navigation a:hover,
-.site-header__wordmark:hover {
+.site-header__wordmark a:hover {
   color: var(--color-brand-dark);
 }
 

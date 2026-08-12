@@ -3,13 +3,11 @@ import './SiteHeader.css';
 function SiteHeader() {
   return (
     <header className="site-header">
-      <a
-        className="site-header__wordmark"
-        href="#top"
-        aria-label="Eirik's portfolio home"
-      >
-        <span>Eirik Enriquez</span>
-      </a>
+      <h1 className="site-header__wordmark">
+        <a href="#top" aria-label="Eirik's portfolio home">
+          Eirik Enriquez
+        </a>
+      </h1>
 
       <nav className="site-header__navigation" aria-label="Main navigation">
         <a href="#projects">Work</a>
