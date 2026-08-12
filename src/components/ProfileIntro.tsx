@@ -7,23 +7,17 @@ function ProfileIntro() {
       <ProfilePhoto className="profile-intro__avatar" period="today" />
 
       <div className="profile-intro__identity">
-        <p className="profile-intro__label">profile / Auckland, Aotearoa</p>
+        <p className="profile-intro__label">Software developer / Auckland, Aotearoa</p>
         <h1 id="profile-name">Eirik Enriquez</h1>
-        <p className="profile-intro__role">Software developer.</p>
         <p className="profile-intro__background">
           Born in the Philippines and raised in New Zealand.
         </p>
+        <p className="profile-intro__timeline">Online since 2009. Building for the web today.</p>
+      </div>
 
-        <div className="profile-intro__actions">
-          <a className="profile-intro__projects" href="#projects">
-            View projects <span aria-hidden="true">&rarr;</span>
-          </a>
-
-          <p className="profile-intro__status">
-            <span aria-hidden="true" />
-            currently building The Word per Minute
-          </p>
-        </div>
+      <div className="profile-intro__current">
+        <span>Currently building</span>
+        <a href="#projects">The Word per Minute</a>
       </div>
     </section>
   );
