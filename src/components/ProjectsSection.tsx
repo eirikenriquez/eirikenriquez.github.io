@@ -10,13 +10,13 @@ function ProjectsSection() {
       aria-labelledby="projects-heading"
     >
       <header className="projects-section__heading">
-        <p>Selected work</p>
-        <h2 id="projects-heading">Featured projects</h2>
+        <h2 id="projects-heading">Selected work</h2>
+        <p>Projects 01&ndash;{String(projects.length).padStart(2, '0')}</p>
       </header>
 
       <div className="projects-section__list">
-        {projects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
+        {projects.map((project, index) => (
+          <ProjectCard index={index + 1} key={project.name} project={project} />
         ))}
       </div>
     </section>
