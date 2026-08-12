@@ -13,7 +13,7 @@ function TimeSkipScreen() {
         <p className="time-skip__years">
           <span>2009</span>
           <span aria-hidden="true">&rarr;</span>
-          <span>today</span>
+          <span>2026</span>
         </p>
         <p className="time-skip__caption">same person, new corner of the internet</p>
       </div>

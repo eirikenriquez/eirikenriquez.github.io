@@ -23,8 +23,6 @@
   inset: 0;
   overflow: hidden;
   border: 1px solid var(--color-brand-border);
-  background: var(--color-brand);
-  color: var(--color-surface);
   font-size: 1.75rem;
   font-weight: 500;
 }
@@ -35,11 +33,17 @@
 
 .time-skip__photo--past {
   animation: time-skip-past 1.4s ease-in-out both;
+  border: 0.25rem solid var(--color-surface);
+  background: var(--color-brand);
+  box-shadow: 0 0 0 1px var(--color-brand-border);
+  color: var(--color-surface);
   font-family: var(--font-retro);
 }
 
 .time-skip__photo--present {
   animation: time-skip-present 1.4s ease-in-out both;
+  background: var(--color-brand-light);
+  color: var(--color-brand-dark);
 }
 
 .time-skip__years {
@@ -50,6 +54,7 @@
   color: var(--color-text-strong);
   font-size: 0.875rem;
   font-weight: 500;
+  animation: time-skip-copy 1.4s ease-out both;
 }
 
 .time-skip__years span:nth-child(2) {
@@ -60,6 +65,7 @@
   margin: 0.5rem 0 0;
   color: var(--color-text-muted);
   font-size: 0.8125rem;
+  animation: time-skip-copy 1.4s ease-out both;
 }
 
 @keyframes time-skip-past {
@@ -77,7 +83,7 @@
 
 @keyframes time-skip-present {
   0%,
-  35% {
+  40% {
     opacity: 0;
     transform: scale(1.04);
   }
@@ -88,9 +94,25 @@
   }
 }
 
+@keyframes time-skip-copy {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translateY(0.25rem);
+  }
+
+  55%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .time-skip__photo--past,
-  .time-skip__photo--present {
+  .time-skip__photo--present,
+  .time-skip__years,
+  .time-skip__caption {
     animation: none;
   }
 
