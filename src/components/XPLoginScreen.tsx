@@ -1,4 +1,5 @@
 import type { FormEvent } from 'react';
+import ProfilePhoto from './ProfilePhoto';
 import './XPLoginScreen.css';
 
 type XPLoginScreenProps = {
@@ -44,9 +45,7 @@ function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
             <p className="xp-login__tagline">a personal corner of the internet</p>
 
             <div className="xp-login__profile-preview">
-              <div className="xp-login__avatar" aria-hidden="true">
-                EE
-              </div>
+              <ProfilePhoto className="xp-login__avatar" period="2009" />
               <div>
                 <strong>Eirik Enriquez</strong>
                 <span>Software developer in Auckland</span>

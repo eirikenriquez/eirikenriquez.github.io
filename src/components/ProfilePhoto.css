@@ -1,0 +1,15 @@
+.profile-photo {
+  position: relative;
+  display: grid;
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.profile-photo__period {
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.35rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1;
+}

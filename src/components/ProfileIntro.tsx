@@ -1,11 +1,10 @@
+import ProfilePhoto from './ProfilePhoto';
 import './ProfileIntro.css';
 
 function ProfileIntro() {
   return (
     <section className="profile-intro" id="profile" aria-labelledby="profile-name">
-      <div className="profile-intro__avatar" aria-label="Profile photo placeholder">
-        EE
-      </div>
+      <ProfilePhoto className="profile-intro__avatar" period="today" />
 
       <div className="profile-intro__identity">
         <p className="profile-intro__label">profile / Auckland, Aotearoa</p>

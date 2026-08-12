@@ -162,9 +162,7 @@
 }
 
 .xp-login__avatar {
-  display: grid;
   width: 3rem;
-  height: 3rem;
   flex: 0 0 auto;
   border: 2px solid #ffffff;
   border-radius: 0.2rem;
@@ -174,6 +172,11 @@
   color: #ffffff;
   font-family: var(--font-body);
   font-weight: 700;
+}
+
+.xp-login__avatar .profile-photo__period {
+  color: rgb(255 255 255 / 82%);
+  font-size: 0.5rem;
 }
 
 .xp-login__profile-preview div:last-child {

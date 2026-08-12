@@ -22,9 +22,6 @@
 }
 
 .profile-intro__avatar {
-  display: grid;
-  aspect-ratio: 1;
-  place-items: center;
   border: 0.375rem solid var(--color-surface);
   border-radius: 1.5rem;
   background:
@@ -34,6 +31,13 @@
   color: var(--color-surface);
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.profile-intro__avatar .profile-photo__period {
+  right: 0.75rem;
+  bottom: 0.65rem;
+  color: rgb(255 255 255 / 82%);
+  font-size: 0.6875rem;
 }
 
 .profile-intro__label,
