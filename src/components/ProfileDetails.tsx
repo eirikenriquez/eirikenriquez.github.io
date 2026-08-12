@@ -1,10 +1,3 @@
-import {
-  Code2,
-  Contact,
-  GraduationCap,
-  Mail,
-  MapPin,
-} from 'lucide-react';
 import './ProfileDetails.css';
 
 const interests = ['faith', 'fitness', 'video games', 'watching sports'];
@@ -13,60 +6,37 @@ function ProfileDetails() {
   return (
     <section className="profile-details" aria-labelledby="profile-details-title">
       <header className="profile-details__header">
-        <p>Profile</p>
         <h2 id="profile-details-title">Eirik&apos;s details</h2>
+        <p>Profile</p>
       </header>
 
       <dl className="profile-details__facts">
         <div>
-          <dt>
-            <MapPin aria-hidden="true" size={17} />
-            Based in
-          </dt>
+          <dt>Based in</dt>
           <dd>Auckland, Aotearoa</dd>
         </div>
 
         <div>
-          <dt>
-            <GraduationCap aria-hidden="true" size={17} />
-            Studying
-          </dt>
+          <dt>Education</dt>
           <dd>Master of Computer and Information Science at AUT</dd>
         </div>
-      </dl>
 
-      <div className="profile-details__section">
-        <h3>Interests</h3>
-        <ul className="profile-details__interests">
-          {interests.map((interest) => (
-            <li key={interest}>{interest}</li>
-          ))}
-        </ul>
-      </div>
+        <div>
+          <dt>Outside code</dt>
+          <dd>{interests.join(', ')}</dd>
+        </div>
 
-      <div className="profile-details__section">
-        <h3>Elsewhere</h3>
-        <ul className="profile-details__links">
-          <li>
-            <a href="https://github.com/eirikenriquez">
-              <Code2 aria-hidden="true" size={17} />
-              GitHub
-            </a>
-          </li>
-          <li>
+        <div>
+          <dt>Elsewhere</dt>
+          <dd className="profile-details__links">
+            <a href="https://github.com/eirikenriquez">GitHub</a>
             <a href="https://www.linkedin.com/in/eirik-mykel-navarro-enriquez/">
-              <Contact aria-hidden="true" size={17} />
               LinkedIn
             </a>
-          </li>
-          <li>
-            <a href="mailto:eirikdbbd@gmail.com">
-              <Mail aria-hidden="true" size={17} />
-              Email
-            </a>
-          </li>
-        </ul>
-      </div>
+            <a href="mailto:eirikdbbd@gmail.com">Email</a>
+          </dd>
+        </div>
+      </dl>
     </section>
   );
 }
