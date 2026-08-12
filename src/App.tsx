@@ -42,12 +42,6 @@ function App() {
     setStage(prefersReducedMotion ? 'profile' : 'opening');
   }
 
-  function handleReplayIntro() {
-    window.sessionStorage.removeItem(introSessionKey);
-    window.scrollTo({ top: 0, behavior: 'auto' });
-    setStage('login');
-  }
-
   if (stage !== 'profile') {
     return (
       <XPLoginScreen
@@ -60,7 +54,7 @@ function App() {
   return (
     <main id="top" className="app app--entering">
       <div className="portfolio-page">
-        <SiteHeader onReplayIntro={handleReplayIntro} />
+        <SiteHeader />
         <ProfileIntro />
         <ProfileLayout sidebar={<ProfileDetails />}>
           <ProjectsSection />

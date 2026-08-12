@@ -4,7 +4,11 @@ const interests = ['faith', 'fitness', 'video games', 'watching sports'];
 
 function ProfileDetails() {
   return (
-    <section className="profile-details" aria-labelledby="profile-details-title">
+    <section
+      className="profile-details"
+      id="about"
+      aria-labelledby="profile-details-title"
+    >
       <header className="profile-details__header">
         <h2 id="profile-details-title">Eirik&apos;s details</h2>
         <p>Profile</p>
