@@ -4,13 +4,15 @@ import ProfileIntro from './components/ProfileIntro';
 import ProfileLayout from './components/ProfileLayout';
 import ProjectsSection from './components/ProjectsSection';
 import SiteHeader from './components/SiteHeader';
+import TimeSkipScreen from './components/TimeSkipScreen';
 import XPLoginScreen from './components/XPLoginScreen';
 import './App.css';
 
-type ExperienceStage = 'login' | 'opening' | 'profile';
+type ExperienceStage = 'login' | 'opening' | 'timeSkip' | 'profile';
 
 const introSessionKey = 'eirikster-intro-viewed';
 const profileTransitionDuration = 700;
+const timeSkipDuration = 1400;
 
 function getInitialStage(): ExperienceStage {
   const hasViewedIntro = window.sessionStorage.getItem(introSessionKey) === 'true';
@@ -22,15 +24,23 @@ function App() {
   const [stage, setStage] = useState<ExperienceStage>(getInitialStage);
 
   useEffect(() => {
-    if (stage !== 'opening') {
+    if (stage === 'opening') {
+      const openingTimer = window.setTimeout(() => {
+        setStage('timeSkip');
+      }, profileTransitionDuration);
+
+      return () => window.clearTimeout(openingTimer);
+    }
+
+    if (stage !== 'timeSkip') {
       return;
     }
 
-    const transitionTimer = window.setTimeout(() => {
+    const timeSkipTimer = window.setTimeout(() => {
       setStage('profile');
-    }, profileTransitionDuration);
+    }, timeSkipDuration);
 
-    return () => window.clearTimeout(transitionTimer);
+    return () => window.clearTimeout(timeSkipTimer);
   }, [stage]);
 
   function handleViewProfile() {
@@ -48,13 +58,17 @@ function App() {
     setStage('login');
   }
 
-  if (stage !== 'profile') {
+  if (stage === 'login' || stage === 'opening') {
     return (
       <XPLoginScreen
         isOpening={stage === 'opening'}
         onViewProfile={handleViewProfile}
       />
     );
+  }
+
+  if (stage === 'timeSkip') {
+    return <TimeSkipScreen />;
   }
 
   return (
