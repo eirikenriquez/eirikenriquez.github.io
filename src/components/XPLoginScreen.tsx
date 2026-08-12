@@ -29,7 +29,7 @@ function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
             <span className="xp-window__icon" aria-hidden="true">
               e
             </span>
-            <span id="xp-window-title">eirikster - Sign In</span>
+            <span id="xp-window-title">Eirik Enriquez - Portfolio</span>
           </div>
 
           <div className="xp-window__controls" aria-hidden="true">
@@ -41,8 +41,8 @@ function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
 
         <div className="xp-window__content">
           <div className="xp-login__welcome">
-            <p className="xp-login__wordmark">eirikster.</p>
-            <p className="xp-login__tagline">a personal corner of the internet</p>
+            <p className="xp-login__wordmark">Eirik Enriquez</p>
+            <p className="xp-login__tagline">software developer portfolio</p>
 
             <div className="xp-login__profile-preview">
               <ProfilePhoto className="xp-login__avatar" period="2009" />
@@ -67,7 +67,7 @@ function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
               <input
                 name="email"
                 type="email"
-                value="visitor@eirikster.com"
+                value="visitor@portfolio.local"
                 readOnly
               />
             </label>
@@ -96,7 +96,7 @@ function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
 
             <p className="xp-login__note" role="status" aria-live="polite">
               {isOpening
-                ? 'Loading Eirikster profile'
+                ? "Opening Eirik's portfolio"
                 : 'No account or real password needed.'}
             </p>
           </form>
@@ -104,7 +104,7 @@ function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
 
         <footer className="xp-window__status">
           <span className="xp-window__status-light" aria-hidden="true" />
-          Connected to eirikster
+          Portfolio ready
         </footer>
       </section>
     </main>

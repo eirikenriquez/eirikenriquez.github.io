@@ -16,7 +16,7 @@ function SiteHeader({ onReplayIntro }: SiteHeaderProps) {
         <span className="site-header__smile" aria-hidden="true">
           &#9786;
         </span>
-        <span>eirikster.</span>
+        <span>Eirik Enriquez</span>
       </a>
 
       <p className="site-header__description">projects and a little real life</p>

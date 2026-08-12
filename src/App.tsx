@@ -10,7 +10,7 @@ import './App.css';
 
 type ExperienceStage = 'login' | 'opening' | 'timeSkip' | 'profile';
 
-const introSessionKey = 'eirikster-intro-viewed';
+const introSessionKey = 'portfolio-intro-viewed';
 const profileTransitionDuration = 700;
 const timeSkipDuration = 1400;
 
