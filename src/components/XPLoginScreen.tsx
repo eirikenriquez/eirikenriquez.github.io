@@ -1,4 +1,3 @@
-import type { FormEvent } from 'react';
 import ProfilePhoto from './ProfilePhoto';
 import './XPLoginScreen.css';
 
@@ -8,16 +7,6 @@ type XPLoginScreenProps = {
 };
 
 function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    if (isOpening) {
-      return;
-    }
-
-    onViewProfile();
-  }
-
   return (
     <main
       className={`xp-login-screen${isOpening ? ' xp-login-screen--opening' : ''}`}
@@ -40,66 +29,41 @@ function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
         </header>
 
         <div className="xp-window__content">
-          <div className="xp-login__welcome">
-            <p className="xp-login__wordmark">Eirik Enriquez</p>
-            <p className="xp-login__tagline">software developer portfolio</p>
-
-            <div className="xp-login__profile-preview">
-              <ProfilePhoto className="xp-login__avatar" period="2009" />
-              <div>
-                <strong>Eirik Enriquez</strong>
-                <span>Software developer in Auckland</span>
-                <span>Last active: right now</span>
-              </div>
-            </div>
-          </div>
-
-          <form className="xp-login__form" onSubmit={handleSubmit}>
+          <section className="xp-launcher__profile" aria-label="Portfolio owner">
+            <ProfilePhoto className="xp-launcher__portrait" period="today" />
             <div>
-              <p className="xp-login__heading">Welcome, visitor</p>
-              <p className="xp-login__copy">
-                Sign in as a guest to view Eirik&apos;s profile.
+              <p className="xp-launcher__name">Eirik Enriquez</p>
+              <p className="xp-launcher__role">Software developer</p>
+              <p className="xp-launcher__location">Auckland, New Zealand</p>
+            </div>
+          </section>
+
+          <section className="xp-launcher__action">
+            <div>
+              <p className="xp-launcher__heading">Welcome</p>
+              <p className="xp-launcher__copy">
+                Open Eirik&apos;s portfolio to view selected work and a little about
+                him.
               </p>
             </div>
 
-            <label className="xp-login__field">
-              <span>Email address</span>
-              <input
-                name="email"
-                type="email"
-                value="visitor@portfolio.local"
-                readOnly
-              />
-            </label>
-
-            <label className="xp-login__field">
-              <span>Password</span>
-              <input name="password" type="password" value="portfolio" readOnly />
-            </label>
-
-            <label className="xp-login__remember">
-              <input type="checkbox" defaultChecked />
-              <span>Remember me on this computer</span>
-            </label>
-
             <button
-              className="xp-login__button"
-              type="submit"
+              className="xp-launcher__button"
+              type="button"
               disabled={isOpening}
+              onClick={onViewProfile}
             >
-              {isOpening ? 'Opening profile...' : "View Eirik's profile"}
+              {isOpening ? 'Opening portfolio...' : 'Open portfolio'}
             </button>
 
-            <div className="xp-login__progress" aria-hidden="true">
+            <div className="xp-launcher__progress" aria-hidden="true">
               <span />
             </div>
 
-            <p className="xp-login__note" role="status" aria-live="polite">
-              {isOpening
-                ? "Opening Eirik's portfolio"
-                : 'No account or real password needed.'}
+            <p className="xp-launcher__status" role="status" aria-live="polite">
+              {isOpening ? 'Opening portfolio' : 'Ready to open'}
             </p>
-          </form>
+          </section>
         </div>
 
         <footer className="xp-window__status">
