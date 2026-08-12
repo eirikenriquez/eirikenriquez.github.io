@@ -4,15 +4,13 @@ import ProfileIntro from './components/ProfileIntro';
 import ProfileLayout from './components/ProfileLayout';
 import ProjectsSection from './components/ProjectsSection';
 import SiteHeader from './components/SiteHeader';
-import TimeSkipScreen from './components/TimeSkipScreen';
 import XPLoginScreen from './components/XPLoginScreen';
 import './App.css';
 
-type ExperienceStage = 'login' | 'opening' | 'timeSkip' | 'profile';
+type ExperienceStage = 'login' | 'opening' | 'profile';
 
 const introSessionKey = 'portfolio-intro-viewed';
 const profileTransitionDuration = 700;
-const timeSkipDuration = 1400;
 
 function getInitialStage(): ExperienceStage {
   const hasViewedIntro = window.sessionStorage.getItem(introSessionKey) === 'true';
@@ -24,23 +22,15 @@ function App() {
   const [stage, setStage] = useState<ExperienceStage>(getInitialStage);
 
   useEffect(() => {
-    if (stage === 'opening') {
-      const openingTimer = window.setTimeout(() => {
-        setStage('timeSkip');
-      }, profileTransitionDuration);
-
-      return () => window.clearTimeout(openingTimer);
-    }
-
-    if (stage !== 'timeSkip') {
+    if (stage !== 'opening') {
       return;
     }
 
-    const timeSkipTimer = window.setTimeout(() => {
+    const openingTimer = window.setTimeout(() => {
       setStage('profile');
-    }, timeSkipDuration);
+    }, profileTransitionDuration);
 
-    return () => window.clearTimeout(timeSkipTimer);
+    return () => window.clearTimeout(openingTimer);
   }, [stage]);
 
   function handleViewProfile() {
@@ -58,17 +48,13 @@ function App() {
     setStage('login');
   }
 
-  if (stage === 'login' || stage === 'opening') {
+  if (stage !== 'profile') {
     return (
       <XPLoginScreen
         isOpening={stage === 'opening'}
         onViewProfile={handleViewProfile}
       />
     );
-  }
-
-  if (stage === 'timeSkip') {
-    return <TimeSkipScreen />;
   }
 
   return (
