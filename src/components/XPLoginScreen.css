@@ -142,14 +142,6 @@
   border-radius: 0.2rem;
   background: var(--color-brand);
   box-shadow: 0 0 0 1px var(--color-brand-border);
-  color: #ffffff;
-  font-family: var(--font-body);
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.xp-launcher__portrait .profile-photo__period {
-  display: none;
 }
 
 .xp-launcher__name,

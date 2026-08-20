@@ -1,3 +1,4 @@
+import childhoodPhoto from '../assets/eirik-childhood.jpg';
 import ProfilePhoto from './ProfilePhoto';
 import './XPLoginScreen.css';
 
@@ -30,7 +31,11 @@ function XPLoginScreen({ isOpening, onViewProfile }: XPLoginScreenProps) {
 
         <div className="xp-window__content">
           <section className="xp-launcher__profile" aria-label="Portfolio owner">
-            <ProfilePhoto className="xp-launcher__portrait" period="today" />
+            <ProfilePhoto
+              className="xp-launcher__portrait"
+              src={childhoodPhoto}
+              alt="Eirik as a child"
+            />
             <div>
               <p className="xp-launcher__name">Eirik Enriquez</p>
               <p className="xp-launcher__role">Software developer</p>
