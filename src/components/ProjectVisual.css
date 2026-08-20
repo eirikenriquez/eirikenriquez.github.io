@@ -1,288 +1,274 @@
-.project-visual {
+.project-cover {
+  --cover-accent: var(--color-accent-orange);
+
   position: absolute;
   inset: 0;
-  display: grid;
   overflow: hidden;
-  place-items: center;
+  background: #171b1d;
 }
 
-.project-visual--word-per-minute {
-  background:
-    linear-gradient(110deg, transparent 0 54%, rgb(39 127 168 / 9%) 54% 100%),
-    var(--color-surface-muted);
+.project-cover__artwork,
+.project-cover__background,
+.project-cover__wash {
+  position: absolute;
+  inset: 0;
 }
 
-.project-visual__browser {
-  width: min(84%, 64rem);
-  overflow: hidden;
-  border: 1px solid rgb(25 40 49 / 18%);
-  border-radius: 0.45rem;
-  background: white;
-  box-shadow: 0 1.5rem 4rem rgb(25 40 49 / 14%);
-}
-
-.project-visual__browser-bar {
-  display: flex;
-  height: 1.7rem;
-  gap: 0.35rem;
-  align-items: center;
-  padding: 0 0.7rem;
-  border-bottom: 1px solid rgb(25 40 49 / 10%);
-  background: #f6f6f4;
-}
-
-.project-visual__browser-bar span {
-  width: 0.38rem;
-  height: 0.38rem;
-  border-radius: 50%;
-  background: #c7cbc9;
-}
-
-.project-visual__browser img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.project-visual--perrinn {
-  background: #15191b;
-}
-
-.project-visual__perrinn-image {
+.project-cover__background {
   width: 100%;
   height: 100%;
-  filter: brightness(0.52) saturate(0.72);
   object-fit: cover;
-  object-position: center;
 }
 
-.project-visual--perrinn::after {
-  position: absolute;
-  inset: 0;
+.project-cover__wash {
+  right: 28%;
   background:
-    linear-gradient(90deg, rgb(9 12 14 / 48%), transparent 72%),
-    linear-gradient(0deg, rgb(9 12 14 / 24%), transparent 58%);
-  content: '';
+    linear-gradient(90deg, rgb(7 12 14 / 26%), transparent 58%),
+    linear-gradient(0deg, rgb(7 12 14 / 78%), transparent 58%);
 }
 
-.project-visual__graph {
+.project-cover__title,
+.project-cover__rail {
   position: absolute;
-  z-index: 1;
-  bottom: clamp(1.5rem, 5vw, 4rem);
-  left: clamp(1.5rem, 6vw, 5rem);
-  width: min(48%, 34rem);
-  padding: clamp(1rem, 2.5vw, 1.6rem);
-  background: rgb(249 249 246 / 94%);
-  color: #15191b;
+  z-index: 2;
 }
 
-.project-visual__graph header,
-.project-visual__graph footer {
+.project-cover__title {
+  right: calc(28% + clamp(2rem, 5vw, 4rem));
+  bottom: clamp(1.75rem, 5vw, 4rem);
+  left: clamp(1.5rem, 4vw, 3rem);
+  color: white;
+}
+
+.project-cover__title span,
+.project-cover__rail-heading,
+.project-cover__rail dt {
+  font-size: clamp(0.55rem, 0.9vw, 0.68rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-cover__title span {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: rgb(255 255 255 / 72%);
+}
+
+.project-cover__title p {
+  max-width: 48rem;
+  margin: 0;
+  font-size: clamp(2rem, 5.6vw, 4.8rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.project-cover__rail {
+  top: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
+  width: 28%;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  flex-direction: column;
+  background: rgb(247 246 241 / 94%);
+  backdrop-filter: blur(0.65rem);
+  color: #1b2022;
+}
+
+.project-cover__rail-heading {
+  margin: 0;
+  color: rgb(27 32 34 / 58%);
+}
+
+.project-cover__rail-header {
+  display: flex;
+  align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.project-visual__graph header {
+.project-cover__rail-header > span {
+  color: var(--cover-accent);
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.project-cover__rail dl {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin: auto 0;
+}
+
+.project-cover__rail dl div {
+  padding-top: 0.65rem;
+  border-top: 1px solid rgb(27 32 34 / 18%);
+}
+
+.project-cover__rail dt {
+  color: rgb(27 32 34 / 54%);
+}
+
+.project-cover__rail dd {
+  margin: 0.4rem 0 0;
+  font-size: clamp(0.8rem, 1.5vw, 1.15rem);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.project-cover__accent {
+  width: 100%;
+  height: 0.25rem;
+  background: var(--cover-accent);
+}
+
+.project-cover--word-per-minute {
+  --cover-accent: #dd8c63;
+}
+
+.project-cover--word-per-minute .project-cover__background {
+  filter: brightness(0.64) saturate(0.76);
+  object-position: left top;
+}
+
+.project-cover--perrinn-424 {
+  --cover-accent: #ea6d48;
+}
+
+.project-cover--perrinn-424 .project-cover__background {
+  filter: brightness(0.52) saturate(0.72);
+}
+
+.project-cover__graph {
+  position: absolute;
+  top: clamp(5rem, 16%, 7rem);
+  left: clamp(4.5rem, 9vw, 7rem);
+  width: min(38%, 28rem);
+  padding: clamp(0.75rem, 1.5vw, 1.1rem);
+  background: rgb(12 17 19 / 72%);
+  color: white;
+}
+
+.project-cover__graph header {
+  display: flex;
   align-items: baseline;
-  font-size: 0.68rem;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: clamp(0.5rem, 0.75vw, 0.62rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.project-visual__graph header strong {
-  color: var(--color-accent-orange);
-  font-size: clamp(1rem, 2vw, 1.5rem);
+.project-cover__graph strong {
+  color: var(--cover-accent);
+  font-size: clamp(0.8rem, 1.4vw, 1.15rem);
   font-weight: 500;
-  letter-spacing: -0.04em;
 }
 
-.project-visual__graph svg {
+.project-cover__graph svg {
   display: block;
   width: 100%;
-  margin: 0.7rem 0 0.5rem;
-  overflow: visible;
+  margin-top: 0.45rem;
 }
 
-.project-visual__graph line {
-  stroke: rgb(21 25 27 / 12%);
+.project-cover__graph line {
+  stroke: rgb(255 255 255 / 14%);
   stroke-width: 1;
 }
 
-.project-visual__graph polyline {
+.project-cover__graph polyline {
   fill: none;
-  stroke: #15191b;
+  stroke: white;
   stroke-linecap: square;
   stroke-linejoin: round;
   stroke-width: 5;
 }
 
-.project-visual__graph footer,
-.project-visual__credit {
-  font-size: 0.58rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.project-cover--flatties {
+  --cover-accent: #7b91b1;
+
+  background: #dce7f0;
 }
 
-.project-visual__credit {
+.project-cover__flatties-artwork {
   position: absolute;
-  z-index: 1;
-  right: 1rem;
-  bottom: 0.8rem;
-  margin: 0;
-  color: rgb(255 255 255 / 72%);
-}
-
-.project-visual--flatties {
-  background:
-    linear-gradient(90deg, rgb(34 41 57 / 7%) 1px, transparent 1px),
-    linear-gradient(rgb(34 41 57 / 7%) 1px, transparent 1px),
-    #e2ebf3;
-  background-size: clamp(4rem, 10vw, 8rem) clamp(4rem, 10vw, 8rem);
-  color: #222939;
-}
-
-.project-visual__flatties-header,
-.project-visual__flatties-footer {
-  position: absolute;
-  right: clamp(1.5rem, 5vw, 3.5rem);
-  left: clamp(1.5rem, 5vw, 3.5rem);
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  font-size: clamp(0.6rem, 1vw, 0.75rem);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.project-visual__flatties-header {
-  top: clamp(1.5rem, 5vw, 3.5rem);
-}
-
-.project-visual__flatties-brand {
+  inset: 0;
   display: grid;
-  width: min(66%, 48rem);
-  gap: clamp(0.8rem, 2vw, 1.4rem);
-  justify-items: center;
+  background:
+    linear-gradient(90deg, rgb(34 41 57 / 8%) 1px, transparent 1px),
+    linear-gradient(rgb(34 41 57 / 8%) 1px, transparent 1px),
+    #dce7f0;
+  background-size: clamp(4rem, 10vw, 8rem) clamp(4rem, 10vw, 8rem);
+  place-items: center;
 }
 
-.project-visual__flatties-brand img {
-  display: block;
-  width: 100%;
+.project-cover__flatties-artwork img {
+  width: min(58%, 43rem);
   height: auto;
+  margin-right: 28%;
   mix-blend-mode: multiply;
 }
 
-.project-visual__flatties-brand p {
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1rem, 2.2vw, 1.65rem);
-  font-style: italic;
+.project-cover--flatties .project-cover__wash {
+  background: linear-gradient(0deg, rgb(25 32 44 / 80%), transparent 60%);
 }
 
-.project-visual__flatties-footer {
-  bottom: clamp(1.5rem, 5vw, 3.5rem);
+.project-cover--tiny-hungry-shark {
+  --cover-accent: #f2d05c;
 }
 
-.project-visual--tiny-shark {
-  background: #081719;
-}
-
-.project-visual__tiny-gameplay {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-}
-
-.project-visual__tiny-gameplay::after {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgb(4 18 20 / 42%), transparent 44%),
-    linear-gradient(0deg, rgb(4 18 20 / 34%), transparent 40%);
-  content: '';
-}
-
-.project-visual__tiny-gameplay img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-visual__tiny-title {
-  position: absolute;
-  z-index: 1;
-  top: clamp(1.5rem, 5vw, 3.5rem);
-  left: clamp(1.5rem, 5vw, 3.5rem);
-  padding: clamp(0.55rem, 1.4vw, 0.9rem) clamp(0.7rem, 1.8vw, 1.1rem);
-  background: rgb(248 247 242 / 94%);
-}
-
-.project-visual__tiny-title img {
-  display: block;
-  width: clamp(10rem, 24vw, 16rem);
-  height: auto;
-}
-
-.project-visual__tiny-jam {
-  position: absolute;
-  z-index: 1;
-  right: clamp(1.5rem, 5vw, 3.5rem);
-  bottom: clamp(1.5rem, 5vw, 3.5rem);
-  display: grid;
-  gap: 0.25rem;
-  margin: 0;
-  color: white;
-  font-size: clamp(0.6rem, 1vw, 0.75rem);
-  letter-spacing: 0.12em;
-  text-align: right;
-  text-transform: uppercase;
-}
-
-.project-visual__tiny-jam span {
-  color: #f2d05c;
+.project-cover--tiny-hungry-shark .project-cover__background {
+  filter: brightness(0.72) saturate(0.88);
+  object-position: center;
 }
 
 @media (max-width: 40rem) {
-  .project-visual__browser {
-    width: 78%;
+  .project-cover__wash {
+    right: 38%;
   }
 
-  .project-visual__browser-bar {
-    height: 1.2rem;
-  }
-
-  .project-visual__graph {
+  .project-cover__title {
+    right: calc(38% + 1rem);
     bottom: 1.5rem;
-    left: 50%;
-    width: 72%;
-    padding: 0.9rem;
-    transform: translateX(-50%);
+    left: 1.25rem;
   }
 
-  .project-visual__graph svg {
-    margin-block: 0.4rem;
+  .project-cover__title span {
+    margin-bottom: 0.35rem;
   }
 
-  .project-visual__graph footer {
-    font-size: 0.48rem;
+  .project-cover__title p {
+    font-size: clamp(1.45rem, 7vw, 2.25rem);
   }
 
-  .project-visual__credit {
+  .project-cover__rail {
+    width: 38%;
+    padding: 1.25rem 1rem;
+  }
+
+  .project-cover__rail dl {
+    gap: 0.85rem;
+  }
+
+  .project-cover__rail dd {
+    font-size: 0.7rem;
+  }
+
+  .project-cover__graph {
+    top: 4rem;
+    left: 3.75rem;
+    width: 42%;
+    padding: 0.55rem;
+  }
+
+  .project-cover__graph header span {
     display: none;
   }
 
-  .project-visual__flatties-brand {
-    width: 72%;
-  }
-
-  .project-visual__flatties-header,
-  .project-visual__flatties-footer {
-    font-size: 0.5rem;
-  }
-
-  .project-visual__tiny-title img {
-    width: clamp(8rem, 42vw, 11rem);
+  .project-cover__flatties-artwork img {
+    width: 52%;
+    margin-right: 38%;
   }
 }

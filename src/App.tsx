@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-import ProfileDetails from './components/ProfileDetails';
 import ProfileIntro from './components/ProfileIntro';
-import ProfileLayout from './components/ProfileLayout';
 import ProjectsSection from './components/ProjectsSection';
 import SiteHeader from './components/SiteHeader';
 import XPLoginScreen from './components/XPLoginScreen';
@@ -56,9 +54,7 @@ function App() {
       <div className="portfolio-page">
         <SiteHeader />
         <ProfileIntro />
-        <ProfileLayout sidebar={<ProfileDetails />}>
-          <ProjectsSection />
-        </ProfileLayout>
+        <ProjectsSection />
       </div>
     </main>
   );
