@@ -13,7 +13,7 @@ function SiteHeader() {
         <a href="#projects">Work</a>
         <span className="site-header__navigation-end">
           <a href="#about">About</a>
-          <a href="mailto:eirikdbbd@gmail.com">Contact</a>
+          <a href="#contact">Contact</a>
         </span>
       </nav>
     </header>

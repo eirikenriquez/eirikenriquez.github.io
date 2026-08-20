@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import AboutSection from './components/AboutSection';
+import ContactSection from './components/ContactSection';
 import ProfileIntro from './components/ProfileIntro';
 import ProjectsSection from './components/ProjectsSection';
 import SiteHeader from './components/SiteHeader';
@@ -57,6 +58,7 @@ function App() {
         <ProfileIntro />
         <ProjectsSection />
         <AboutSection />
+        <ContactSection />
       </div>
     </main>
   );
