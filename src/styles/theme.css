@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light;
+
+  /* Shared portfolio palette */
+  --color-page-background: #efeee8;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f6f6f2;
+  --color-text-strong: #242b30;
+  --color-text: #4f5559;
+  --color-text-muted: #747b80;
+  --color-border: #c8c8c2;
+  --color-border-soft: #deded8;
+
+  --color-brand: #277fa8;
+  --color-brand-dark: #176d9c;
+  --color-brand-light: #e4f1f8;
+  --color-brand-border: #9fc2d4;
+
+  --color-accent-orange: #dc6a36;
+  --color-accent-yellow: #e9be3f;
+  --color-accent-yellow-light: #ffe36f;
+  --color-wordmark: #9a9c9e;
+
+  /* The intro and profile intentionally use typography from different eras. */
+  --font-body: 'Plus Jakarta Sans', Arial, sans-serif;
+  --font-wordmark: 'Nunito Sans', 'Trebuchet MS', sans-serif;
+  --font-retro: Tahoma, Verdana, sans-serif;
+
+  /* Windows XP-inspired colours for the future entry screen. */
+  --color-xp-desktop: #5b91ca;
+  --color-xp-title: #1768d5;
+  --color-xp-title-dark: #0d4eae;
+  --color-xp-window: #ece9d8;
+  --color-xp-border: #174ea6;
+}

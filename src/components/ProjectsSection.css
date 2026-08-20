@@ -1,0 +1,191 @@
+.projects-section {
+  padding: 0 clamp(1rem, 4vw, 2rem) clamp(2rem, 5vw, 3.5rem);
+  background: var(--color-surface);
+}
+
+.projects-section__heading {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.projects-section__heading h2,
+.projects-section__heading p {
+  margin: 0;
+}
+
+.projects-section__heading h2 {
+  color: var(--color-text-strong);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.projects-section__heading p {
+  color: var(--color-text-muted);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.projects-section__stage {
+  position: relative;
+}
+
+.projects-section__visual {
+  position: relative;
+  min-height: clamp(20rem, 54vw, 37rem);
+  overflow: hidden;
+  background: var(--color-surface-muted);
+}
+
+.projects-section__control {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  place-items: center;
+  background: var(--color-surface);
+  color: var(--color-text-strong);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.projects-section__control:hover {
+  color: var(--color-brand-dark);
+}
+
+.projects-section__control:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+.projects-section__control--previous {
+  left: 1rem;
+}
+
+.projects-section__control--next {
+  right: 1rem;
+}
+
+.projects-section__details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  padding: clamp(1.25rem, 3vw, 2rem) 0;
+}
+
+.projects-section__status,
+.projects-section__description,
+.projects-section__technologies,
+.projects-section__details h3 {
+  margin: 0;
+}
+
+.projects-section__status {
+  color: var(--color-accent-orange);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.projects-section__details h3 {
+  margin-top: 0.45rem;
+  color: var(--color-text-strong);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+.projects-section__description {
+  max-width: 42rem;
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.projects-section__technologies {
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.projects-section__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-content: start;
+  justify-content: end;
+  padding-top: 1.75rem;
+}
+
+.projects-section__links a {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  color: var(--color-brand-dark);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-underline-offset: 0.25rem;
+}
+
+.projects-section__progress {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.375rem;
+}
+
+.projects-section__progress span {
+  height: 2px;
+  background: var(--color-border-soft);
+}
+
+.projects-section__progress .is-active {
+  background: var(--color-text-strong);
+}
+
+@media (max-width: 40rem) {
+  .projects-section__visual {
+    min-height: 18rem;
+  }
+
+  .projects-section__control {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .projects-section__control--previous {
+    left: 0.5rem;
+  }
+
+  .projects-section__control--next {
+    right: 0.5rem;
+  }
+
+  .projects-section__details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .projects-section__links {
+    justify-content: start;
+    padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-section__visual,
+  .projects-section__details {
+    scroll-behavior: auto;
+  }
+}

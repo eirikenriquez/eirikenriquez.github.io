@@ -1,0 +1,24 @@
+.portfolio-page {
+  width: min(100%, 70rem);
+  margin: 0 auto;
+}
+
+.app--entering .portfolio-page {
+  animation: portfolio-enter 300ms ease-out both;
+}
+
+@keyframes portfolio-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app--entering .portfolio-page {
+    animation: none;
+  }
+}
