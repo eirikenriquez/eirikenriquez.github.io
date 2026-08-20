@@ -3,6 +3,7 @@ import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import ProfileIntro from './components/ProfileIntro';
 import ProjectsSection from './components/ProjectsSection';
+import SectionEntrance from './components/SectionEntrance';
 import SiteHeader from './components/SiteHeader';
 import XPLoginScreen from './components/XPLoginScreen';
 import './App.css';
@@ -55,10 +56,18 @@ function App() {
     <main id="top" className="app app--entering">
       <div className="portfolio-page">
         <SiteHeader />
-        <ProfileIntro />
-        <ProjectsSection />
-        <AboutSection />
-        <ContactSection />
+        <SectionEntrance>
+          <ProfileIntro />
+        </SectionEntrance>
+        <SectionEntrance>
+          <ProjectsSection />
+        </SectionEntrance>
+        <SectionEntrance>
+          <AboutSection />
+        </SectionEntrance>
+        <SectionEntrance>
+          <ContactSection />
+        </SectionEntrance>
       </div>
     </main>
   );
