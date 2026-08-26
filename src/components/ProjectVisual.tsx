@@ -109,7 +109,6 @@ function ProjectVisual({ project, projectNumber }: ProjectVisualProps) {
       <div className="project-cover__wash" />
 
       <div className="project-cover__title">
-        <span>Selected work</span>
         <p>{project.cover.title ?? project.name}</p>
       </div>
 

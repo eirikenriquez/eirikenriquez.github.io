@@ -13,7 +13,6 @@
 }
 
 .about-section__heading h2,
-.about-section__heading p,
 .about-section__portrait,
 .about-section__introduction,
 .about-section__notes p {
@@ -27,7 +26,6 @@
   letter-spacing: -0.025em;
 }
 
-.about-section__heading p,
 .about-section__notes span,
 .about-section__portrait figcaption {
   color: var(--color-text-muted);

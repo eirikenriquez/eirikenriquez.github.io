@@ -3,6 +3,11 @@
   margin: 0 auto;
 }
 
+.app {
+  background: var(--color-surface);
+  padding: 0;
+}
+
 .app--entering .portfolio-page {
   animation: portfolio-enter 300ms ease-out both;
 }
