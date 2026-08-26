@@ -42,6 +42,24 @@
   background: var(--color-surface-muted);
 }
 
+.projects-section__visual-panel {
+  position: absolute;
+  inset: 0;
+}
+
+.projects-section__announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .projects-section__control {
   position: absolute;
   z-index: 3;
@@ -50,15 +68,21 @@
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
-  border: 0;
+  border: 1px solid var(--color-border-soft);
   place-items: center;
   background: var(--color-surface);
   color: var(--color-text-strong);
   cursor: pointer;
   transform: translateY(-50%);
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
 }
 
 .projects-section__control:hover {
+  border-color: var(--color-brand-border);
+  background: var(--color-brand-light);
   color: var(--color-brand-dark);
 }
 
@@ -78,8 +102,14 @@
 .projects-section__details {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
+  grid-area: 1 / 1;
   gap: 2rem;
   padding: clamp(1.25rem, 3vw, 2rem) 0;
+}
+
+.projects-section__details-frame {
+  display: grid;
+  overflow: hidden;
 }
 
 .projects-section__status,
@@ -139,6 +169,48 @@
   text-underline-offset: 0.25rem;
 }
 
+.projects-section__links a svg {
+  transition: transform 180ms ease;
+}
+
+.projects-section__links a:hover svg {
+  transform: translate(0.125rem, -0.125rem);
+}
+
+.projects-section__panel--incoming.projects-section__motion--next {
+  --carousel-enter-offset: 1.25rem;
+}
+
+.projects-section__panel--incoming.projects-section__motion--previous {
+  --carousel-enter-offset: -1.25rem;
+}
+
+.projects-section__panel--outgoing.projects-section__motion--next {
+  --carousel-exit-offset: -1.25rem;
+}
+
+.projects-section__panel--outgoing.projects-section__motion--previous {
+  --carousel-exit-offset: 1.25rem;
+}
+
+.projects-section__panel--incoming {
+  animation: carousel-panel-enter 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.projects-section__panel--outgoing {
+  animation: carousel-panel-exit 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  pointer-events: none;
+}
+
+.projects-section__details.projects-section__panel--incoming {
+  animation-duration: 300ms;
+  animation-delay: 55ms;
+}
+
+.projects-section__details.projects-section__panel--outgoing {
+  animation-duration: 300ms;
+}
+
 .projects-section__progress {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -154,14 +226,38 @@
   background: var(--color-text-strong);
 }
 
+@keyframes carousel-panel-enter {
+  from {
+    opacity: 0;
+    transform: translateX(var(--carousel-enter-offset));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes carousel-panel-exit {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(var(--carousel-exit-offset));
+  }
+}
+
 @media (max-width: 40rem) {
   .projects-section__visual {
     min-height: 18rem;
   }
 
   .projects-section__control {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
   .projects-section__control--previous {
@@ -184,8 +280,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .projects-section__visual,
-  .projects-section__details {
-    scroll-behavior: auto;
+  .projects-section__panel--incoming,
+  .projects-section__panel--outgoing {
+    animation: none;
+    transform: none;
+  }
+
+  .projects-section__control,
+  .projects-section__links a svg {
+    transition: none;
   }
 }

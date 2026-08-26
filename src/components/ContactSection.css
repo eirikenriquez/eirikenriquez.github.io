@@ -1,103 +1,61 @@
 .contact-section {
-  padding: 0 clamp(1rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2.5rem);
-  background: var(--color-brand-dark);
-  color: var(--color-surface);
-}
-
-.contact-section__heading,
-.contact-section__footer {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-}
-
-.contact-section__heading {
-  padding: 1.25rem 0;
-  border-top: 1px solid rgb(255 255 255 / 35%);
-}
-
-.contact-section__heading p,
-.contact-section__invitation h2,
-.contact-section__footer p {
-  margin: 0;
-}
-
-.contact-section__heading p,
-.contact-section__footer {
+  padding: 1.25rem clamp(1rem, 4vw, 2rem);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.contact-section__heading p:last-child,
-.contact-section__footer {
-  color: rgb(255 255 255 / 68%);
-}
-
-.contact-section__invitation {
-  display: grid;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  padding: clamp(3rem, 10vw, 7rem) 0;
-}
-
-.contact-section__invitation h2 {
-  font-size: clamp(3.5rem, 12vw, 8.5rem);
-  font-weight: 500;
-  letter-spacing: -0.07em;
-  line-height: 0.9;
-}
-
-.contact-section__invitation a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: fit-content;
-  max-width: 100%;
-  color: inherit;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  overflow-wrap: anywhere;
-  text-underline-offset: 0.25em;
-}
-
-.contact-section__invitation a svg {
-  flex: 0 0 auto;
-}
-
-.contact-section__footer {
-  padding-top: 1.25rem;
-  border-top: 1px solid rgb(255 255 255 / 35%);
-}
-
-.contact-section__footer nav,
-.contact-section__footer a {
+.contact-section__links,
+.contact-section__links nav {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
-.contact-section__footer nav {
-  gap: 1.25rem;
+.contact-section__links {
+  gap: clamp(1rem, 3vw, 2rem);
 }
 
-.contact-section__footer a {
-  gap: 0.25rem;
+.contact-section__links nav {
+  gap: clamp(0.85rem, 2.5vw, 1.5rem);
+}
+
+.contact-section__name,
+.contact-section__copyright {
+  margin: 0;
+}
+
+.contact-section__name {
+  color: var(--color-text-strong);
+}
+
+.contact-section a {
   color: inherit;
   text-decoration: none;
 }
 
-.contact-section__footer a:hover {
-  color: var(--color-surface);
+.contact-section a:hover {
+  color: var(--color-brand-dark);
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
 }
 
 @media (max-width: 32rem) {
-  .contact-section__heading,
-  .contact-section__footer {
+  .contact-section {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .contact-section__invitation a {
+  .contact-section__links {
     align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }

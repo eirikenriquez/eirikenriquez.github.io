@@ -6,7 +6,6 @@ function AboutSection() {
     <section className="about-section" id="about" aria-labelledby="about-title">
       <header className="about-section__heading">
         <h2 id="about-title">About</h2>
-        <p>Profile</p>
       </header>
 
       <div className="about-section__content">
@@ -21,8 +20,8 @@ function AboutSection() {
 
         <div className="about-section__copy">
           <p className="about-section__introduction">
-            I&apos;m Eirik, a software developer who enjoys building thoughtful
-            digital products and understanding the systems behind them.
+            I&apos;m Eirik. Welcome to my page, where I share a few projects
+            I&apos;m proud of.
           </p>
 
           <div className="about-section__notes">
